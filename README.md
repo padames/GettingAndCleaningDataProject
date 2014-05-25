@@ -22,6 +22,38 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 Good luck!
 
 
+# Steps to download the data set:
+
+The following is executed in the same directory where the
+scrip **run_analysis.R** will be run.
+
+
+```r
+fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(fileURL, destfile = "data00240.zip", method = "curl")
+dataDownloadedDate <- date()
+
+## prepare information on download
+msg <- paste(... = c("File", "data00240.zip", "downloaded on:", dataDownloadedDate), 
+    collapse = " ")
+print(msg)
+```
+
+```
+## [1] "File data00240.zip downloaded on: Sun May 25 14:23:58 2014"
+```
+
+```r
+
+## extract data set to current working directory
+unzip("data00240.zip")
+```
+
+
+The README.txt file that comes with the dataset explains that the captured 
+data consists of *3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz*.
+The raw measured signals are called *tAcc-XYZ* and *tGyro-XYZ*.
+
 
 
 
